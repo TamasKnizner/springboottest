@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons"	rel="stylesheet" />
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link href="../static/css/materialize.css" 
+	      th:href="@{css/materialize.css}" rel="stylesheet" />
+	
+</head>
+<body>
+	<nav>
+	    <div class="nav-wrapper row">
+	    	<div class="col offset-s1">
+	        	<a href="#" class="brand-logo">Spring Boot Test</a>
+	        </div>
+	    </div>
+	</nav>
+	<div class="container">
+		<div class="row">
+		    <form class="col s12 offset-s4">
+		    <h1>Spring Boot Test</h1>
+		    	<div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="First Name" id="first_name" type="text" class="validate" />
+		          		<label for="first_name">First Name</label>
+		        	</div>
+		        </div>
+		        <div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="Last Name" id="last_name" type="text" class="validate" />
+		          		<label for="last_name">Last Name</label>
+		        	</div>
+		      	</div>
+		      	<div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="Password" id="password" type="password" class="validate" />
+		          		<label for="password">Password</label>
+		        	</div>
+		      	</div>
+		      	<div class="row">
+			        <div class="input-field col s4">
+				          <input placeholder="Email" id="email" type="email" class="validate" />
+				          <label for="email">Email</label>
+		        	</div>
+		      	</div>
+		   	</form>
+		</div>
+	</div>
+	<script src="../static/js/jquery-3.1.1.min.js" 
+	        th:src="@{js/jquery-3.1.1.min.js}"></script>
+	<script src="../static/js/materialize.js" 
+	        th:src="@{js/materialize.js}"></script>
+</body>
+</html>

@@ -2,17 +2,19 @@ package hu.kniznertamas.config;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
-//@Configuration
+@Configuration
 public class ThymeleafConfig {
 
     private static final String CHARACTER_ENCODING = "UTF-8";
     private static final String PREFIX = "classpath:/templates/";
+    private static final String SUFFIX = ".html";
     private static final String TEMPLATE_MODE = "HTML5";
 
     private ApplicationContext appContext;
@@ -36,11 +38,14 @@ public class ThymeleafConfig {
         return engine;
     }
 
-    private ITemplateResolver templateResolver() {
+    @Bean
+    public ITemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setApplicationContext(appContext);
         resolver.setPrefix(PREFIX);
+        resolver.setSuffix(SUFFIX);
         resolver.setTemplateMode(TEMPLATE_MODE);
+        resolver.setCacheable(false);
         return resolver;
     }
 

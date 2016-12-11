@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons"	rel="stylesheet" />
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link href="../static/css/materialize.css" 
+	      th:href="@{css/materialize.css}" rel="stylesheet" />
+	<title>Registration</title>
+</head>
+<body>
+	<div th:include="fragments/nav"></div>
+	<div class="container">
+		<div class="row">
+		    <form class="col s12 offset-s4" th:action="@{/registration}" th:object="${RegistrationRequest}" method="post">
+		    <h1>Registration</h1>
+		    	<div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="First Name" type="text" th:field="*{firstName}" th:classappend="${#fields.hasErrors('firstName')} ? invalid : ''"/>
+		          		<label for="firstName">First Name</label>
+		        	</div>
+		        </div>
+		        <div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="Last Name" type="text" th:field="*{lastName}"/>
+		          		<label for="lastName">Last Name</label>
+		        	</div>
+		      	</div>
+		      	<div class="row">
+		        	<div class="input-field col s4">
+		          		<input placeholder="Password" type="password" th:field="*{password}"/>
+		          		<label for="password">Password</label>
+		        	</div>
+		      	</div>
+		      	<div class="row">
+			        <div class="input-field col s4">
+				          <input placeholder="Email" type="email" th:field="*{email}"/>
+				          <label for="email">Email</label>
+		        	</div>
+		      	</div>
+		      	<div class="row">
+		        	<button class="btn waves-effect waves-light" type="submit" name="action">
+		        		Submit
+						<i class="material-icons right">register</i>
+					</button>
+		      	</div>
+		   	</form>
+		</div>
+	</div>
+	<script src="../static/js/jquery-3.1.1.min.js" 
+	        th:src="@{js/jquery-3.1.1.min.js}"></script>
+	<script src="../static/js/materialize.js" 
+	        th:src="@{js/materialize.js}"></script>
+</body>
+</html>

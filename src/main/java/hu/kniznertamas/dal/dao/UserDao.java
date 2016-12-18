@@ -1,12 +1,12 @@
 package hu.kniznertamas.dal.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import hu.kniznertamas.dal.entity.UserEntity;
 import hu.kniznertamas.dal.repository.UserRepository;
 
-@Service
+@Component
 public class UserDao {
 
     @Autowired

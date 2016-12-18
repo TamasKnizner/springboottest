@@ -1,4 +1,4 @@
-package hu.kniznertamas.controller;
+package hu.kniznertamas.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
